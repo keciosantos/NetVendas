@@ -1,0 +1,70 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:decorate  xmlns="http://www.w3.org/1999/xhtml"
+             xmlns:h="http://xmlns.jcp.org/jsf/html"
+             xmlns:p="http://primefaces.org/ui" 
+             xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+             template="template.xhtml"
+             xmlns:f="http://xmlns.jcp.org/jsf/core">
+    
+    <center>
+        <h:form id="corp">
+            
+            
+                <form action="LCliente.jsf " method="post"> <input type="submit" value="Pesquisa"/></form>
+                <br>
+                    
+                </br>
+               
+                <p:panelGrid columns="2" >
+                    <h:outputLabel value="Cliente" ></h:outputLabel>
+                    <p:inputText value="#{clienteBean.getListaCliente('k').nome}"></p:inputText>
+
+                    <h:outputLabel value="Cpf"></h:outputLabel>
+                    <p:inputText value="#{clienteBean.cliente.cpf}">
+                       <!-- <f:validator validatorId="cpf"/>-->
+                    </p:inputText>
+
+                </p:panelGrid>
+                <br>
+                    
+                </br>
+                <p:panelGrid columns="2" >
+                    <h:outputLabel value="Produto" ></h:outputLabel>
+                    <p:inputText value=""></p:inputText>
+                    
+                    <h:outputLabel value="Quantidade" ></h:outputLabel>
+                    <p:inputText value=""></p:inputText>
+
+                    <h:outputLabel value="Valor"></h:outputLabel>
+                    <p:inputText value=""></p:inputText>
+
+                    <h:outputLabel value="Total por item"></h:outputLabel>
+                    <p:inputText value=""></p:inputText>
+
+                </p:panelGrid>
+                <p>
+
+                </p>
+              
+                <p:panelGrid columns="2" >
+                    <h:outputLabel value="Total Pedido" ></h:outputLabel>
+                    <p:inputText value=""></p:inputText>
+                    
+                    <h:outputLabel value="Quantidade de items" ></h:outputLabel>
+                    <p:inputText value=""></p:inputText>
+                     
+                    <h:outputLabel value="Total por item"></h:outputLabel>
+                    <p:inputText value=""></p:inputText>
+
+                </p:panelGrid>
+                <p>
+
+                </p>
+                <p:toolbarGroup align="left">
+                <h:commandButton value="Adicionar Intem" action="#{clienteBean.adicinoarCliente}" ></h:commandButton>
+                </p:toolbarGroup>
+          
+    </h:form>
+    </center>
+</ui:decorate>     

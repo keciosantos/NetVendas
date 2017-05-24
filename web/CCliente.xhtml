@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:decorate  xmlns="http://www.w3.org/1999/xhtml"
+             xmlns:h="http://xmlns.jcp.org/jsf/html"
+             xmlns:p="http://primefaces.org/ui" 
+             xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+             template="template.xhtml"
+             xmlns:f="http://xmlns.jcp.org/jsf/core">
+    
+    <center>
+        <h:form id="corp">
+        <p:fieldset legend="Clientes">
+            <p:panelGrid columns="2" >
+                <h:outputLabel value="Nome" ></h:outputLabel>
+                <p:inputText value="#{clienteBean.cliente.nome}"></p:inputText>
+
+                <h:outputLabel value="Cpf"></h:outputLabel>
+                <p:inputText value="#{clienteBean.cliente.cpf}">
+                   <!-- <f:validator validatorId="cpf"/>-->
+                </p:inputText>
+
+                <h:outputLabel value="Data de Nascimento"></h:outputLabel>
+                <p:inputText value="#{clienteBean.cliente.dataNascimento}"></p:inputText>
+
+                <h:outputLabel value="Endereço"></h:outputLabel>
+                <p:inputText value="#{clienteBean.cliente.endereco}"></p:inputText>
+            </p:panelGrid>
+            <p>
+                
+            </p>
+            <p:toolbarGroup align="left">
+            <h:commandButton value="Cadastrar Cliente" action="#{clienteBean.adicinoarCliente}" ></h:commandButton>
+            </p:toolbarGroup>
+        </p:fieldset>
+    </h:form>
+    </center>
+</ui:decorate>     
+
+

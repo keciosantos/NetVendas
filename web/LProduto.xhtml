@@ -1,0 +1,32 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:decorate    xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                template="template.xhtml"
+                xmlns:f="http://xmlns.jcp.org/jsf/core"
+                xmlns:p="http://primefaces.org/ui">
+    <center>
+          <h1>Lista de  Estoque</h1>
+          <p:dataTable value="#{produtoBean.listaProduto()}" var="Lp" id="tab" >
+              <center>
+              <p:column headerText="Id" sortBy="#{Lp.id}">
+                  <h:outputText value="#{Lp.id}"></h:outputText>
+                </p:column>
+              <p:column headerText="Nome" sortBy="#{LC.nome}">
+                    <h:outputText value="#{Lp.nome}"></h:outputText>
+                </p:column>
+              <p:column headerText="Descrição" sortBy="#{Lp.descricao}">
+                  <h:outputText value="#{Lp.descricao}"></h:outputText>
+                </p:column>
+              <p:column headerText="Valor" sortBy="#{Lp.valor}">
+                    <h:outputText value="#{Lp.valor}"></h:outputText>
+                </p:column>
+              <p:column headerText="Quantidade" sortBy="#{Lc.quantidade}">
+                    <h:outputText value="#{Lp.quantidade}"></h:outputText>
+                </p:column>
+              </center>
+            </p:dataTable>
+    <span>Sistema para controle de Vendas</span>
+    </center>
+ </ui:decorate>     

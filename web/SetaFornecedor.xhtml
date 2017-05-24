@@ -1,0 +1,50 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:decorate  xmlns="http://www.w3.org/1999/xhtml"
+             xmlns:h="http://xmlns.jcp.org/jsf/html"
+             xmlns:p="http://primefaces.org/ui" 
+             xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+             template="template.xhtml"
+             xmlns:f="http://xmlns.jcp.org/jsf/core">
+    
+    <center>
+        <h:form id="corp">
+            
+            
+              <h:outputLabel value="Fornecedor " ></h:outputLabel>
+              <p:dataTable value="#{fornecedorBean.getListaFornecedor(nome)}" var="Lc"  >
+                   <center>
+                  <p:column headerText="nome">
+                  <h:outputText value="#{Lc.nome}"></h:outputText>
+                </p:column>
+                       <p:column>
+                           <p:commandButton value="Aceitar" action="CProduto.jsf">
+                               <script type="text/javascript">
+                                   var Fornecedor = function (){
+                                       this.publico = 'fornecedor';
+                                   };
+                                   var fornecedor = new Fornecedor();
+                                   console.log(fornecedor);
+                                                               </script>   
+                                   
+                           </p:commandButton>
+                       </p:column>
+                       </center>
+              </p:dataTable>
+             
+            
+            
+            <!--<p:column>
+              <h:outputLabel value="Cliente " ></h:outputLabel>
+              <p:dataTable value="#{clienteBean.listarCliente}" var="Lc" id="tab" >
+                   <center>
+                  <p:column headerText="nome" sortBy="#{Lc.nome}" >
+                  <h:outputText value="#{Lc.nome}"></h:outputText>
+                </p:column>
+                    </center>
+              </p:dataTable>
+            </p:column>
+           -->
+        </h:form>
+    </center>
+</ui:decorate> 

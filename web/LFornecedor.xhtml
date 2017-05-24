@@ -1,0 +1,32 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:decorate    xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                template="template.xhtml"
+                xmlns:f="http://xmlns.jcp.org/jsf/core"
+                xmlns:p="http://primefaces.org/ui">
+    <center>
+          <h1>Lista de Fornecedores</h1>
+          <p:dataTable value="#{fornecedorBean.getListaFornecedor(nome)}" var="Fc" id="tab" >
+              <center>
+              <p:column headerText="Id" >
+                  <h:outputText value="#{Fc.ID}"></h:outputText>
+                </p:column>
+              <p:column headerText="Nome">
+                    <h:outputText value="#{Fc.nome}"></h:outputText>
+                </p:column>
+              <p:column headerText="Cnpj" >
+                  <h:outputText value="#{Fc.cnpj}"></h:outputText>
+                </p:column>
+              <p:column headerText="Telefone" >
+                    <h:outputText value="#{Fc.telefone}"></h:outputText>
+                </p:column>
+              <p:column headerText="Endereço" >
+                    <h:outputText value="#{Fc.endereco}"></h:outputText>
+                </p:column>
+              </center>
+            </p:dataTable>
+    <span>Sistema para controle de Vendas</span>
+    </center>
+ </ui:decorate>     

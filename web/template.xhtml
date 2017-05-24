@@ -1,0 +1,61 @@
+<?xml version='1.0' encoding='UTF-8' ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+
+    <h:head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        <h:outputStylesheet name="./css/default.css"/>
+        <h:outputStylesheet name="./css/cssLayout.css"/>
+        <link rel="shortcut icon" href="favicon .ico"></link>
+        <title>Sertão Digital</title>
+    </h:head>
+
+    <h:body>
+        <center>
+        <div id="top">
+            <br></br>
+            <img src="./resources/img/sertao.png" ><h1>Sertão Digital</h1>
+               
+                
+                
+                <p:menubar >
+                <p:menuitem value="Home" url="index.jsf"></p:menuitem>
+                <p:submenu label="Cadastro">
+                    <p:menuitem value="Cliente" url="CCliente.jsf"></p:menuitem>
+                    <p:menuitem value="Fonecedor" url="CFornecedor.jsf"></p:menuitem>
+                    <p:menuitem value="Produto" url="CProduto.jsf"></p:menuitem>   
+                </p:submenu>
+                <p:submenu label="Consulta">
+                    <p:menuitem value="Cliente" url="LCliente.jsf"></p:menuitem>
+                    <p:menuitem value="Fonecedor" url="LFornecedor.jsf"></p:menuitem>
+                    <p:menuitem value="Produto" url="LProduto.jsf"></p:menuitem>   
+                </p:submenu>
+                <p:menuitem value="Compra" url="Compra.jsf"></p:menuitem>
+                <p:menuitem value="Vendas" url="Vendas.jsf"></p:menuitem>
+                <p:menuitem value="Sair" url="index.jsf"></p:menuitem>
+            </p:menubar>
+            </img>
+            <hr/>
+        </div></center>
+        
+        <div id="content" >
+            <ui:insert></ui:insert>
+        </div>
+
+        <div id="bottom">
+            <center>
+                <br/>
+                <br/>
+               
+            <ui:insert name="bottom">
+                <p>Copyright&copy; 2015 - by Kecio Santos</p>
+            </ui:insert>
+            </center>
+        </div>
+
+    </h:body>
+
+</html>
