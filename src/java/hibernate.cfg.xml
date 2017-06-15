@@ -10,8 +10,8 @@
     <property name="hibernate.hbm2ddl.auto">update</property>
     <mapping class="br.com.sertaodigital.entity.Cliente"/>
     <mapping class="br.com.sertaodigital.entity.Fornecedor"/>
-    <mapping class="br.com.sertaodigital.entity.Produto"/>
-    <mapping class="br.com.sertaodigital.entity.Pedido"/>
     <mapping class="br.com.sertaodigital.entity.Item"/>
+    <mapping class="br.com.sertaodigital.entity.Pedido"/>
+    <mapping class="br.com.sertaodigital.entity.Produto"/>
   </session-factory>
 </hibernate-configuration>

@@ -19,10 +19,7 @@ public class Cliente implements Serializable{
     private String cpf;
     private String dataNascimento;
     private String endereco;
-    
-    //@OneToOne(mappedBy = "cliente")
-    //private Pedido pedido;
-    
+      
     
     public Integer getId() {
         return id;
