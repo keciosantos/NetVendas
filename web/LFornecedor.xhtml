@@ -8,7 +8,7 @@
                 xmlns:p="http://primefaces.org/ui">
     <center>
           <h1>Lista de Fornecedores</h1>
-          <p:dataTable value="#{fornecedorBean.getListaFornecedor(nome)}" var="Fc" id="tab" >
+          <p:dataTable value="#{fornecedorBean.listarFornecedor}" var="Fc" id="tab" >
               <center>
               <p:column headerText="Id" >
                   <h:outputText value="#{Fc.ID}"></h:outputText>

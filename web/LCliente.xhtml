@@ -7,9 +7,10 @@
                 xmlns:f="http://xmlns.jcp.org/jsf/core"
                 xmlns:p="http://primefaces.org/ui">
      <center>
-          <h1>Lista de Clientes</h1>
+         <h1>Lista de Clientes</h1>
           <p:dataTable value="#{clienteBean.listarCliente}" var="Lc" id="tab" >
               <center>
+                   
                   <p:column headerText="Id" sortBy="#{Lc.id}" >
                   <h:outputText value="#{Lc.id}"></h:outputText>
                 </p:column>

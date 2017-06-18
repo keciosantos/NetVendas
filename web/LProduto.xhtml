@@ -8,12 +8,12 @@
                 xmlns:p="http://primefaces.org/ui">
     <center>
           <h1>Lista de  Estoque</h1>
-          <p:dataTable value="#{produtoBean.listaProduto()}" var="Lp" id="tab" >
+          <p:dataTable value="#{produtoBean.listarProduto}" var="Lp" id="tab" >
               <center>
-              <p:column headerText="Id" sortBy="#{Lp.id}">
+                  <p:column headerText="Id" sortBy="#{Lp.id}">
                   <h:outputText value="#{Lp.id}"></h:outputText>
                 </p:column>
-              <p:column headerText="Nome" sortBy="#{LC.nome}">
+              <p:column headerText="Nome" sortBy="#{Lp.nome}">
                     <h:outputText value="#{Lp.nome}"></h:outputText>
                 </p:column>
               <p:column headerText="Descrição" sortBy="#{Lp.descricao}">

@@ -2,7 +2,11 @@
 package br.com.sertaodigital.bean;
 
 import br.com.sertaodigital.entity.Fornecedor;
-import br.com.sertaodigital.dao.FornecedorDao;
+import br.com.sertaodigital.entity.Cliente;
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
+import com.sun.jersey.api.client.Client;
+import com.sun.jersey.api.client.WebResource;
 import java.io.Serializable;
 import java.util.List;
 import java.util.Objects;
@@ -14,7 +18,7 @@ import javax.faces.bean.SessionScoped;
 public class FornecedorBean implements Serializable{
 
     private Fornecedor fornecedor = new Fornecedor();
-    private FornecedorDao Fornecedordao =new FornecedorDao();
+    //private FornecedorDao Fornecedordao =new FornecedorDao();
     private List<Fornecedor> listaFornecedor;
     
     public FornecedorBean() {
@@ -22,7 +26,7 @@ public class FornecedorBean implements Serializable{
     
     
        public String adicionarFornecedor(){
-           Fornecedordao.addFornecedor(fornecedor);
+           //Fornecedordao.addFornecedor(fornecedor);
            fornecedor.setNome(fornecedor.getNome());
            fornecedor.setCnome(fornecedor.getCnome());
            fornecedor.setCnpj(fornecedor.getCnpj());
@@ -33,27 +37,17 @@ public class FornecedorBean implements Serializable{
        }
             
         public String removerFornecedor(){
-            Fornecedordao.removeFornecedor(fornecedor);
+           //Fornecedordao.removeFornecedor(fornecedor);
             return "Removido com Sucesso!";
         }
-        public Fornecedor getListarFornecedor(String nome){
-          
-        //listacliente = clienteDao.getList();
-        FornecedorDao fornecedorDao = new FornecedorDao();
-        List lista = fornecedorDao.getListJQL(nome);
-        
-        return (Fornecedor) lista.get(0);
-    }
-        public List<Fornecedor> getListaFornecedor(String nome){
-        
-          
-        //listacliente = clienteDao.getList();
-        return this.Fornecedordao.getList();
-    }
-    
-    
-    
+        public List getListarFornecedor(){
+            Client c= Client.create();
+            WebResource wr = c.resource("http://localhost:8080/WS_NetVendas/webresources/NetVEndas/Fornecedor/list");
+            String json = wr.get(String.class);
 
+           Gson gson = new Gson();
+           return gson.fromJson(json, new TypeToken<List<Fornecedor>>(){}.getType()); 
+    } 
     public Fornecedor getFornecedor() {
         return fornecedor;
     }
@@ -62,13 +56,13 @@ public class FornecedorBean implements Serializable{
         this.fornecedor = fornecedor;
     }
 
-    public FornecedorDao getFornecedordao() {
-        return Fornecedordao;
-    }
+    //public FornecedorDao getFornecedordao() {
+      //  return Fornecedordao;
+   // }
 
-    public void setFornecedordao(FornecedorDao Fornecedordao) {
-        this.Fornecedordao = Fornecedordao;
-    }
+    //public void setFornecedordao(FornecedorDao Fornecedordao) {
+    //    this.Fornecedordao = Fornecedordao;
+    //}
 
     @Override
     public int hashCode() {

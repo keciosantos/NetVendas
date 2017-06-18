@@ -11,13 +11,9 @@
         <h:outputStylesheet name="./css/cssLayout.css"/>
         <link rel="shortcut icon" href="favicon .ico"></link>
         <title>Sertão Digital</title>
-    </h:head>
-
-    <h:body>
-        <center>
-        <div id="top">
-            <br></br>
-            <img src="./resources/img/vendas.png" ><h1>Net Vendas</h1>
+        
+        <div id="top2">
+            
                 <p:menubar >
                 <p:menuitem value="Home" url="index.jsf"></p:menuitem>
                 <p:submenu label="Cadastro">
@@ -30,16 +26,30 @@
                     <p:menuitem value="Fonecedor" url="LFornecedor.jsf"></p:menuitem>
                     <p:menuitem value="Produto" url="LProduto.jsf"></p:menuitem>   
                 </p:submenu>
-                <p:menuitem value="Compra" url="Compra.jsf"></p:menuitem>
-                <p:menuitem value="Vendas" url="Vendas.jsf"></p:menuitem>
-                <p:menuitem value="Sair" url="index.jsf"></p:menuitem>
+                <p:submenu label="Relatorios">
+                    <p:menuitem value="Compra" url="Compra.jsf"></p:menuitem>
+                    <p:menuitem value="Vendas" url="Vendas.jsf"></p:menuitem>
+                </p:submenu>
+                <p:menuitem value="Estoque" url="index.jsf"></p:menuitem>
+               
             </p:menubar>
-            </img>
-            <hr/>
-        </div></center>
+        </div>
+        
+    </h:head>
+
+    <h:body>
         
         <div id="content" >
-            <ui:insert></ui:insert>
+            <center>
+                <img src="./resources/img/vendas.png" ><h1>Net Vendas</h1> </img>
+            </center>
+            
+                
+            
+         
+            <ui:insert>
+                
+            </ui:insert>
         </div>
 
         <div id="bottom">

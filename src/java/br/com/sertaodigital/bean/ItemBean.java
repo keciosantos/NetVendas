@@ -1,6 +1,6 @@
 package br.com.sertaodigital.bean;
 
-import br.com.sertaodigital.dao.ItemDao;
+//import br.com.sertaodigital.dao.ItemDao;
 import br.com.sertaodigital.entity.Item;
 import java.util.List;
 import javax.faces.bean.ManagedBean;
@@ -11,7 +11,7 @@ import javax.faces.bean.SessionScoped;
 public class ItemBean {
     
     private Item item = new Item();
-    private ItemDao itemDao = new ItemDao();
+    //private ItemDao itemDao = new ItemDao();
     private List<Item> listaitem;
     
             
@@ -25,19 +25,19 @@ public class ItemBean {
         item.setQuant(item.getQuant());
         item.setValor(item.getValor());
         item.setTvalor(item.getTvalor());
-        itemDao.addItem(item);
+        //itemDao.addItem(item);
         return "index.jsf";
     }
     public String removercliente(){
-        itemDao.removeItem(item);
+        //itemDao.removeItem(item);
         return "Removido com Sucesso!";
     }
-  
+  /*
       public List getListarItem(){
           
         return this.itemDao.getList();
     }
-
+*/
     public Item getItem() {
         return item;
     }
@@ -45,7 +45,7 @@ public class ItemBean {
     public void setItem(Item item) {
         this.item = item;
     }
-
+/*
     public ItemDao getItemDao() {
         return itemDao;
     }
@@ -53,7 +53,7 @@ public class ItemBean {
     public void setItemDao(ItemDao itemDao) {
         this.itemDao = itemDao;
     }
-
+*/
     public List<Item> getListaitem() {
         return listaitem;
     }
